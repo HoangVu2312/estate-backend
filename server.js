@@ -12,7 +12,7 @@ const {Server} = require("socket.io");  // socketio server
 // connect socket io server vs express server and alllow internal connection
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://honagvu-real-estate-utopia.onrender.com",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   },
