@@ -49,7 +49,7 @@ router.post('/', verifyToken, async(req, res) => {
         // destruc data
         const {title, description, price, address, city, country, likes, images: pictures, facility} = req.body.property;
         const {userId} = req.body;
-        const user = User.findById(userId)
+        const user = await User.findById(userId)
         if(!user.isOwner) return res.status(401).json("You don't have permission");
 
         await Property.create({userId, title, description, price, address, city, likes, country, likes, pictures, facility});
